@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Biaya Liburan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="logo-container">
+    <img src="images/CalcJour.png" alt="Logo" class="logo">
+    <h1 class="logo-title" id="app-title">CalcJourney</h1>
+  </div>
+
+  <div class="container">
+    <div class="language-selector">
+      <label for="language" id="label-language">Pilih Bahasa:</label>
+      <select id="language" onchange="changeLanguage()">
+        <option value="id">Bahasa Indonesia</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <h1 id="form-title">Kalkulator Biaya Liburan</h1>
+    <form id="trip-form">
+      <label for="transport" id="label-transport">Biaya Transportasi (Rp):</label>
+      <input type="text" id="transport" placeholder="Contoh: 1.000.000" oninput="formatInput(this)">
+
+      <label for="accommodation" id="label-accommodation">Biaya Penginapan per Malam (Rp):</label>
+      <input type="text" id="accommodation" placeholder="Contoh: 300.000" oninput="formatInput(this)">
+
+      <label for="nights" id="label-nights">Jumlah Malam Menginap:</label>
+      <input type="number" id="nights" placeholder="Contoh: 3">
+
+      <label for="food" id="label-food">Biaya Makan per Hari (Rp):</label>
+      <input type="text" id="food" placeholder="Contoh: 150.000" oninput="formatInput(this)">
+
+      <label for="activities" id="label-activities">Biaya Aktivitas (Rp):</label>
+      <input type="text" id="activities" placeholder="Contoh: 500.000" oninput="formatInput(this)">
+
+      <label for="snacking" id="label-snacking">Biaya Jajan Cemilan (Rp):</label>
+      <input type="text" id="snacking" placeholder="Contoh: 500.000" oninput="formatInput(this)">
+
+      <button type="button" id="calculate-btn" onclick="calculateTotal()">Hitung Total Biaya</button>
+    </form>
+
+    <div id="result">
+      <h2 id="result-title">Total Biaya Liburan:</h2>
+      <p id="total-cost">Rp 0</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
